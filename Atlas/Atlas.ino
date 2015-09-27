@@ -61,18 +61,15 @@ void loop() {
   }
  
   if(average > 3.20){
-      Serial.print("Off -- ");
       digitalWrite(greenPin, LOW);
       digitalWrite(yellowPin, LOW);
       digitalWrite(redPin, LOW);
     } else if( average > 3.05 && average < 3.15){
-      Serial.print("Green -- ");
       digitalWrite(greenPin, HIGH);
       digitalWrite(yellowPin, LOW);
       digitalWrite(redPin, LOW);
       timePassed = 0;
     } else if( average > 1.5 && average < 3.05){
-      Serial.print("Yellow -- ");
       digitalWrite(greenPin, LOW);
       digitalWrite(yellowPin, HIGH);
       digitalWrite(redPin, LOW);
@@ -80,23 +77,17 @@ void loop() {
         timePassed = millis();
       }
     }else if( average > 1 && average < 1.4 ){
-      Serial.print("Red -- ");
       digitalWrite(greenPin, LOW);
       digitalWrite(yellowPin, LOW);
       digitalWrite(redPin, HIGH);
     } else if (average < 1) {
-      Serial.print("No Glass -- ");
       digitalWrite(greenPin, LOW);
       digitalWrite(yellowPin, LOW);
       digitalWrite(redPin, LOW);
     }
    
   Serial.print(average);
-  Serial.print("  --  ");
-  Serial.print(timePassed);
-  Serial.print("  --  ");
-  Serial.print(millis());
-  Serial.print("  -Diff-  ");
+  Serial.print(" ");
   int passnum = timePassed - millis();
   Serial.println(passnum);
   delay(1);
