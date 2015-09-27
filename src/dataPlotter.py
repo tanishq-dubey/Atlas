@@ -1,12 +1,3 @@
-"""
-ldr.py
-
-Display analog data from Arduino using Python (matplotlib)
-
-Author: Mahesh Venkitachalam
-Website: electronut.in
-"""
-
 import sys, serial, argparse
 import numpy as np
 from time import sleep
